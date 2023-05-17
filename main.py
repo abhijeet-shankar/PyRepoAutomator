@@ -8,16 +8,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-driver_path = r"chromedriver_win32\chromedriver_win32.exe" 
 
 
-service=Service(driver_path)
-driver = webdriver.Chrome(service=service)
 
-driver.maximize_window()
-driver.get("https://github.com/login")
 
-def github_repo_create(usern,password,projname,desc,n,):
+def github_repo_create(usern,password,projname,desc,n):
+    driver_path = r"chromedriver_win32\chromedriver_win32.exe" 
+    service=Service(driver_path)
+    driver = webdriver.Chrome(service=service)
+    driver.maximize_window()
+    driver.get("https://github.com/login")
     search_input = driver.find_element(By.ID, "login_field")
     search_input.clear()
     #usern = "abhijeet-shankar"
@@ -37,14 +37,15 @@ def github_repo_create(usern,password,projname,desc,n,):
     search_input.clear()
     search_input.send_keys(projname)
     time.sleep(2)
-
-    search_input = driver.find_element(By.ID, "react-aria-3")
-    #desc="py "
-    # search_input = driver.find_element(By.NAME, "query-builder-test")
-    search_input.clear()
-    search_input.send_keys(desc)
-    time.sleep(2)
-
+    if (desc):
+        search_input = driver.find_element(By.ID, "react-aria-3")
+        #desc="py "
+        # search_input = driver.find_element(By.NAME, "query-builder-test")
+        search_input.clear()
+        search_input.send_keys(desc)
+        time.sleep(2)
+    else:
+        pass    
     #n="Private"
 
     if n=='Public':
@@ -60,7 +61,5 @@ def github_repo_create(usern,password,projname,desc,n,):
     search_input.click()
     # search_input.send_keys(Keys.RETURN)
     time.sleep(10)
-
     # driver.timeouts(self, timeouts)
-
     driver.quit()
