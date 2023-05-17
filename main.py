@@ -27,7 +27,7 @@ def github_repo_create(usern,password,projname,desc,n):
     #password = "Abhijeet17@"
     search_input.send_keys(password)
     search_input.send_keys(Keys.RETURN)
-    time.sleep(2)
+    time.sleep(12)
 
     driver.get('https://github.com/new')
 
