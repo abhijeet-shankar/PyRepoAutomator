@@ -29,7 +29,7 @@ with the path to the WebDriver executable.
 
 3.Run the application:
       ```
-      python tkinter.py
+      python app.py
       ```
       
 4.The GUI window will appear, allowing you to enter the repository details and proceed with the repository creation process.    
