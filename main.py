@@ -8,10 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-
-
-
-
 def github_repo_create(usern,password,projname,desc,n):
     driver_path = r"chromedriver_win32\chromedriver_win32.exe" 
     service=Service(driver_path)

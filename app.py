@@ -3,8 +3,6 @@ from tkinter import ttk
 from tkinter import messagebox
 import main
 
-
-
 def git_repo_create():
     global root
     username = username_entry.get()
@@ -43,7 +41,6 @@ repotype_var = tk.StringVar(root)
 repotype_dropdown = ttk.Combobox(root, textvariable=repotype_var)
 repotype_dropdown['values'] = ('Public','Private')
 repotype_dropdown.current(0)
-
 
 
 username_label.pack()
