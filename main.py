@@ -20,33 +20,27 @@ def github_repo_create(usern,password,projname,desc,n):
     driver.get("https://github.com/login")
     search_input = driver.find_element(By.ID, "login_field")
     search_input.clear()
-    #usern = "abhijeet-shankar"
     search_input.send_keys(usern)
     search_input = driver.find_element(By.ID, "password")
     search_input.clear()
     #password = "Abhijeet17@"
     search_input.send_keys(password)
     search_input.send_keys(Keys.RETURN)
-    time.sleep(12)
+    time.sleep(15)
 
     driver.get('https://github.com/new')
 
     search_input = driver.find_element(By.ID, "react-aria-2")
-    #projname="python gpt3.5"
-    # search_input = driver.find_element(By.NAME, "query-builder-test")
     search_input.clear()
     search_input.send_keys(projname)
     time.sleep(2)
     if (desc):
         search_input = driver.find_element(By.ID, "react-aria-3")
-        #desc="py "
-        # search_input = driver.find_element(By.NAME, "query-builder-test")
         search_input.clear()
         search_input.send_keys(desc)
         time.sleep(2)
     else:
         pass    
-    #n="Private"
 
     if n=='Public':
         search_input = driver.find_element(By.ID, "react-aria-5")
@@ -59,7 +53,5 @@ def github_repo_create(usern,password,projname,desc,n):
 
     search_input= driver.find_element(By.CSS_SELECTOR,".fAcoGo")
     search_input.click()
-    # search_input.send_keys(Keys.RETURN)
     time.sleep(10)
-    # driver.timeouts(self, timeouts)
     driver.quit()
