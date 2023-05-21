@@ -19,7 +19,7 @@ def github_repo_create(usern,password,projname,desc,n):
     search_input.send_keys(usern)
     search_input = driver.find_element(By.ID, "password")
     search_input.clear()
-    #password = "Abhijeet17@"
+
     search_input.send_keys(password)
     search_input.send_keys(Keys.RETURN)
     time.sleep(15)
