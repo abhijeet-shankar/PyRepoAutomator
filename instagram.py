@@ -10,12 +10,16 @@ password=input()
 frndname=input()
 message=input()
 
-
-driver_path = r"chromedriver_win32\chromedriver_win32.exe" 
+driver_path = r"chromedriver-win64\chromedriver.exe" 
+# driver_path = r"chromedriver_win32\chromedriver_win32.exe" 
 service=Service(driver_path)
 driver = webdriver.Chrome(service=service)
 driver.maximize_window()
 driver.get("https://www.instagram.com/accounts/login/")
+
+x=driver.page_source
+print(x)
+
 time.sleep(2)
 search_input = driver.find_element(By.XPATH, " //input[@class= '_aa4b _add6 _ac4d'] ")
 #search_input.clear()
@@ -25,7 +29,6 @@ search_input_pass.send_keys(password)
 # time.sleep(5)
 login=driver.find_element(By.XPATH,"//button[@class='_acan _acap _acas _aj1-']").click()
 time.sleep(30)
-
 
 chat=driver.get('https://www.instagram.com/direct/inbox/')
 #chat=driver.find_element(By.XPATH,f"//a[@href='/direct/inbox/?next=%2Fi{usern}%2F']").click()
